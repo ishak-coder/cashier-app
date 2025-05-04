@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashier System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a68ac">
+
+</head>
+<body>
+    <div class="container">
+        <h2>Better Cashier</h2>
+
+        <div class="input-section">
+            <input type="text" id="itemName" placeholder="Item Name">
+            <input type="number" id="itemPrice" placeholder="Price">
+            <input type="number" id="itemQty" placeholder="Quantity" value="1">
+            <button onclick="addItem()">Add Item</button>
+        </div>
+
+        <table id="cart">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="summary">
+            <h3>Total: shs<span id="totalPrice">0.00</span></h3>
+            <button onclick="checkout()">Checkout</button>
+            
+
+        </div>
+    </div>
+
+    <div id="history" class="summary"></div>
+    <!-- Modal -->
+<div id="confirmModal" class="modal">
+    <div class="modal-content">
+      <p>Are you sure you want to delete all transaction history?</p>
+      <div class="modal-buttons">
+        <button class="danger" onclick="confirmClear()">Yes, Delete</button>
+        <button onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <button class="danger" onclick="showModal()">Delete History</button>
+  
+
+    <script src="script.js"></script>
+</body>
+</html>
